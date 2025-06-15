@@ -1,3 +1,5 @@
+#helped
+
 def arrange_guest_arrival_order(arrival_pattern):
     stack = []
     result = [''] * (len(arrival_pattern) + 1)
@@ -20,10 +22,5 @@ def arrange_guest_arrival_order(arrival_pattern):
 
     return result
         
-
-
-
-    
-
 print(arrange_guest_arrival_order("IIIDIDDD"))  
 print(arrange_guest_arrival_order("DDD"))  
