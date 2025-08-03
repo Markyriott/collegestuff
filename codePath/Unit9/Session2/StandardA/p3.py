@@ -39,30 +39,34 @@ def build_tree(values):
   return root
 
 
-def is_balanced(display):
-    def balance_helper(node):
-        if not node:
-            return True, 0
+def sweet_difference(chocolates):
+    if not chocolates:
+        return None
 
-        left_b, left_h = balance_helper(node.left)
-        right_b, right_h = balance_helper(node.right)
-        
-        balanced = left_b and right_b and abs(left_h - right_h) <= 1
+    res = []
+    queue = deque([chocolates])
 
-        height = max(left_h, right_h) + 1
+    while queue:
+        highest = 0
+        lowest = float('inf')
+        for i in range(len(queue)):
+            node = queue.popleft()
 
-        return balanced, height
-    
-    balanced, _ = balance_helper(display)
-    return balanced left_b, left_h = balance_helper(node.left)
-
-baked_goods = ["🎂", "🥮", "🍩", "🥖", "🧁"]
-display1 = build_tree(baked_goods)
-
-baked_goods = ["🥖", "🧁", "🧁", "🍪", None, None, "🍪", "🥐", None, None, "🥐"]
-display2 = build_tree(baked_goods)
+            highest = max(node.val,highest)
+            lowest = min(node.val,lowest)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        res.append(abs(highest-lowest))
+    return res
 
 
-print(is_balanced(display1)) 
-print(is_balanced(display2))  
+sweetness_levels1 = [3, 9, 20, None, None, 15, 7]
+chocolate_box1 = build_tree(sweetness_levels1)
 
+sweetness_levels2 = [1, 2, 3, 4, 5, None, 6]
+chocolate_box2 = build_tree(sweetness_levels2)
+
+print(sweet_difference(chocolate_box1))  
+print(sweet_difference(chocolate_box2))

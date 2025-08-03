@@ -39,30 +39,26 @@ def build_tree(values):
   return root
 
 
-def is_balanced(display):
-    def balance_helper(node):
-        if not node:
-            return True, 0
+def sum_each_days_orders(orders):
+    if not orders:
+        return None
 
-        left_b, left_h = balance_helper(node.left)
-        right_b, right_h = balance_helper(node.right)
-        
-        balanced = left_b and right_b and abs(left_h - right_h) <= 1
+    res = []
+    queue = deque([orders])
 
-        height = max(left_h, right_h) + 1
+    while queue:
+        sum = 0
+        for i in range(len(queue)):
+            node = queue.popleft()
+            sum += node.val
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        res.append(sum)
+    return res
 
-        return balanced, height
-    
-    balanced, _ = balance_helper(display)
-    return balanced left_b, left_h = balance_helper(node.left)
+order_sizes = [4, 2, 6, 1, 3]
+orders = build_tree(order_sizes)
 
-baked_goods = ["🎂", "🥮", "🍩", "🥖", "🧁"]
-display1 = build_tree(baked_goods)
-
-baked_goods = ["🥖", "🧁", "🧁", "🍪", None, None, "🍪", "🥐", None, None, "🥐"]
-display2 = build_tree(baked_goods)
-
-
-print(is_balanced(display1)) 
-print(is_balanced(display2))  
-
+print(sum_each_days_orders(orders))
