@@ -19,6 +19,18 @@ public class H2{
         Q4(matrix);
 
         System.out.println("Question 5: ");
+        int[][] m1 = {
+            {3,3,2},
+            {5,3,1},
+            {8,6,2},
+            {2,2,1}
+        };
+        int[][] m2 = {
+            {5,2,1,3},
+            {7,4,5,2},
+            {2,5,9,2}
+        };
+        Q5(m1,m2);
 
         System.out.println("Question 6: ");
         int[][] symmetricMatrix = {
@@ -93,8 +105,18 @@ public class H2{
         System.out.println("Max = " + max[0] + " on column " + max[2] + ", row " + max[1]);
     }
 
-    static void Q5(int[][] m1, int[][] m2){ //Multiplt matrices
-        int[][] Matrix = new int[m1[0].length][m2.length];
+    static void Q5(int[][] m1, int[][] m2){ //Multiply matrices
+        int[][] matrix = new int[m2.length][m1[0].length];
+
+        for (int i = 0; i < m2.length; i++){
+            for (int j = 0; j < m1[0].length; j++){
+                for (int t = 0; t < m2[0].length; t++){
+                    matrix[i][j] = m2[i][t] * m1[t][j];
+                }
+            }
+        }
+
+        print2DMatrix(matrix);
     }
 
     static boolean Q6(int[][] matrix){ // symmetric
