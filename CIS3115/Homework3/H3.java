@@ -23,7 +23,12 @@ public class H3{
         }
 
         //Question 7:
-
+        System.out.println("\nStarting Stopwatch");
+        Stopwatch stopwatch = new Stopwatch();
+        for(int i = 0; i < 10000; i++){}
+        stopwatch.stop();
+        System.out.println("Stopping Stopwatch");
+        System.out.println("Elapsed Time: " + stopwatch.getElapsedTime());
     }
 }
 
@@ -65,6 +70,31 @@ class Stock{
     }
 }
 
-class StopWatch{
-    
+class Stopwatch{
+    private long startTime;
+    private long endTime;
+
+    Stopwatch(){
+        this.startTime = System.currentTimeMillis();
+    }
+
+    long getStartTime(){
+        return startTime;
+    }
+
+    long getEndTime(){
+        return endTime;
+    }
+
+    void start(){
+        this.startTime = System.currentTimeMillis();
+    }
+
+    void stop(){
+        this.endTime = System.currentTimeMillis();
+    }
+
+    public long getElapsedTime(){
+        return endTime - startTime;
+    }
 }
