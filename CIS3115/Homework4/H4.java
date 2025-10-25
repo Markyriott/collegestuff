@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class H4{
     public static void main(String[] args){
         // Question 1:
@@ -19,6 +21,49 @@ class H4{
         char[] charArr = {'5','6','7'};
         System.out.println("5 + 6 + 7 = " + MyInteger.parseInt(charArr));
         System.out.println("5 + 6 + 7 = " + MyInteger.parseInt("567"));
+        
+        //Question 2:
+        MyPoint point1 = new MyPoint();
+        MyPoint point2 = new MyPoint(10, 30.5);
+        System.out.println("Distance between point 1 and point 2: " + point1.distance(point2));
+
+        //Question 3:
+        //Scanner scanner = new Scanner(System.in);
+        //System.out.print("Enter a positive integer: ");
+        //int num = scanner.nextInt();
+        
+        //scanner.close();
+        
+        //Question 4:
+
+    }
+}
+
+class MyPoint{
+    double x;
+    double y;
+
+    double getX() { return x; }
+    double getY() { return y; }
+
+    MyPoint(){
+        this.x = 0;
+        this.y = 0;
+    }
+
+    MyPoint(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+
+    double distance(MyPoint point){
+        double distance = Math.sqrt(Math.pow((Math.abs(this.x - point.getX())), 2) + Math.pow((Math.abs(this.y - point.getY())), 2));
+        return distance;
+    }
+
+    double distance(double x, double y){
+        double distance = Math.sqrt(Math.pow((Math.abs(this.x - x)), 2) + Math.pow((Math.abs(this.y - y)), 2));
+        return distance;
     }
 }
 
@@ -30,7 +75,7 @@ class MyInteger{
     }
 
     int getValue(){
-        return this.value;
+return this.value;
     }
 
     boolean isEven(){
