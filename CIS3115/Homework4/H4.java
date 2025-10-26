@@ -28,13 +28,39 @@ class H4{
         System.out.println("Distance between point 1 and point 2: " + point1.distance(point2));
 
         //Question 3:
-        //Scanner scanner = new Scanner(System.in);
-        //System.out.print("Enter a positive integer: ");
-        //int num = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int num = scanner.nextInt();
+        scanner.close();
+
+        StackOfIntegers s = new StackOfIntegers();
         
-        //scanner.close();
-        
+        for (int i = 1; i * i <= num; i++){
+            if (num % i == 0) {
+                s.push(i);
+            }
+        }
+
+        System.out.println("Popping numbers from stack: ");
+
+        while (s.getSize() > 0) {
+            System.out.print(s.pop() + " ");
+        }
+
         //Question 4:
+        Queue q = new Queue();
+
+        for (int i = 1; i <= 20; i++){
+            q.enqueue(i);
+        }
+
+        System.out.println("\nDequeueing numbers: ");
+
+        while (q.getSize() > 0){
+            System.out.print(q.deque() + " ");
+        }
+
+        //Question 5:
 
     }
 }
@@ -165,4 +191,86 @@ return this.value;
         int sum = parseInt(s.toCharArray());
         return sum;
     }
+}
+
+class StackOfIntegers {
+    private int[] elements;
+    private int size;
+    public static final int DEFAULT_CAPACITY = 16;
+
+    public StackOfIntegers() {
+        this(DEFAULT_CAPACITY);
+    }
+
+    public StackOfIntegers(int capacity) {
+        elements = new int[capacity];
+    }
+
+    public void push(int value) {
+        if (size >= elements.length) {
+            int[] temp = new int[elements.length * 2];
+            System.arraycopy(elements, 0, temp, 0, elements.length);
+            elements = temp;
+        }
+
+        elements[size++] = value;
+    }
+
+    public int pop() {
+        return elements[--size];
+    }
+
+    public int peek() {
+        return elements[size - 1];
+    }
+
+    public boolean empty() {
+        return size ==0;
+    }
+
+    public int getSize() {
+        return size;
+    }
+}
+
+class Queue{
+    private int[] elements;
+    private int size;
+    public static final int DEFAULT_CAPACITY = 8;
+
+    public Queue(){
+        elements = new int[DEFAULT_CAPACITY];
+    }
+
+    void enqueue(int v){
+        if (size >= elements.length) {
+            int[] temp = new int[elements.length * 2];
+            System.arraycopy(elements, 0, temp, 0, elements.length);
+            elements = temp;
+        }
+
+        elements[size++] = v;
+    }
+
+    int deque(){
+        int temp = elements[0];
+        for(int i = 0; i < size - 1; i++){
+            elements[i] = elements[i+1];
+        } 
+        size--;
+        return temp;
+    }
+
+    boolean empty(){
+        return size == 0;
+    }
+
+    int getSize(){
+        return size;
+    }
+
+}
+
+class MyStringBuilder1{
+    
 }
