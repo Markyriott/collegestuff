@@ -61,7 +61,12 @@ class H4{
         }
 
         //Question 5:
-
+        MyStringBuilder1 myString = new MyStringBuilder1("Hello");
+        myString.append(new MyStringBuilder1(" World"));
+        myString.append(5);
+        myString.toLowerCase();
+        System.out.print("\n");
+        System.out.printf("'%s' length is %d. The character at index 8 is '%c'.", myString.toString(), myString.length(), myString.charAt(8));
     }
 }
 
@@ -272,5 +277,40 @@ class Queue{
 }
 
 class MyStringBuilder1{
-    
+    private String str;
+
+   public MyStringBuilder1(String s){
+       this.str = s;
+   } 
+
+   public MyStringBuilder1 append(MyStringBuilder1 s){
+       this.str += s.str;
+       return this;
+   }
+
+   public MyStringBuilder1 append(int i){
+       this.str += i;
+       return this;
+   }
+
+   public int length(){
+       return this.str.length();
+   }
+
+   public char charAt(int index){
+       return this.str.charAt(index);
+   }
+
+   public MyStringBuilder1 toLowerCase(){
+       this.str = this.str.toLowerCase();
+       return this;
+   }
+
+   public MyStringBuilder1 substring(int begin, int end){
+       return new MyStringBuilder1(this.str.substring(begin, end));
+   }
+
+   public String toString(){
+       return this.str;
+   }
 }
