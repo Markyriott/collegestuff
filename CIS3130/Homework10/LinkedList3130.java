@@ -212,11 +212,11 @@ public class LinkedList3130<E> implements Deque3130<E>, List3130<E> {
     @Override
     public Iterator<E> iterator(){
         return new Iterator<E>(){
-            private Node<E> current;
+            private Node<E> current = head;
 
             @Override
             public boolean hasNext(){
-                return current.next != null;
+                return current != null;
             }
 
             @Override
