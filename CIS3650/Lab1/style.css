@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+p{
+    color: purple;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
