@@ -1,0 +1,13 @@
+Assignment Instructions
+Create a JAR file for a Java program that uses two separate source files.
+You are not required to write a complex program. A simple program that prints "Hello World" is acceptable.
+Requirements:
+    1    The program must contain two separate Java source files.
+    2    One file must contain the main method, which will run the program.
+    3    The main method should call a method from the second file, which returns the string that will be printed to the terminal.
+    4    You may NOT use * or *.java when specifying file names during compilation or when creating the JAR file. You must list the files explicitly.
+    5    The program should then be packaged into a JAR file.
+Additional information:
+    •    A JAR file contains a manifest, which describes the contents of the archive.
+    •    You may use the default manifest provided by Java.
+    •    Creating a custom manifest is optional and not required for this assignment.
