@@ -1,0 +1,30 @@
+1.  a. Set of positive odd integers
+    b. Set of even integers 
+    c. Set of positive even integers
+    d. Set of multiples of 6
+    e. Set of palindromic strings containing only 0s and 1s.
+    f. Empty set
+
+2.  a. {1, 10, 100}
+    b. {n | n is a natural number and n > 5}
+    c. {n | n is a natural number and n < 5}
+    d. {aba}
+    e. {ε}
+    f. {∅}
+
+3.  a. No
+    b. Yes
+    c. {x, y, z}
+    d. {x, y}
+    e. {(x,x),(x,y),(y,x),(y,y),(z,x),(z,y)}
+    f. {∅, {x}, {y}, {x,y}}
+
+4. a * b, multiplying sets pairs each element in A with each element in B
+
+5. 2^C, since the power set would be every subset in C plus the empty set and C itself.
+
+6.  a. 7
+    b. range = [6,7], domain = [1,5]
+    c. 6
+    d. domain = X*Y , range = [6,10]
+    e. 8
