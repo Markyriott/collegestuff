@@ -1,0 +1,39 @@
+Added PID 12345 to queue.
+Added PID 12346 to queue.
+Added PID 12347 to queue.
+Added PID 12348 to queue.
+Added PID 12349 to queue.
+Added PID 12350 to queue.
+Added PID 12351 to queue.
+Added PID 12352 to queue.
+Added PID 12353 to queue.
+Added PID 12354 to queue.
+Unable to add PID 12355, queue is full.
+Unable to add PID 12356, queue is full.
+
+List of 10 CPU Jobs in PCB queue:
+PID     Status  Priority
+12345   READY   5
+12346   READY   10
+12347   READY   7
+12348   READY   4
+12349   READY   6
+12350   READY   8
+12351   READY   2
+12352   READY   3
+12353   READY   5
+12354   READY   6
+
+Removed PID 12345 from queue.
+
+List of 9 CPU Jobs in PCB queue:
+PID     Status  Priority
+12346   READY   10
+12347   READY   7
+12348   READY   4
+12349   READY   6
+12350   READY   8
+12351   READY   2
+12352   READY   3
+12353   READY   5
+12354   READY   6
